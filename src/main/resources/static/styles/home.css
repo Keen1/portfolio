@@ -161,4 +161,29 @@
     line-height: 1.6;
 }
 
+@media (max-width: 600px){
+    .about-content, .community-content{
+        display: block;
+        text-align: left;
+    }
+
+    .about-photo img{
+        float: left;
+        margin-right: 15px;
+        width: 40%;
+    }
+    .community-photo img{
+        float: left;
+        display: block;
+        margin-right: 15px;
+        width: 40%;
+        height: 300px;
+
+    }
+    .about-text p, .community-text p{
+        max-width: 90%;
+        font-size: 1em;
+        margin: 0 auto;
+    }
+}
 
