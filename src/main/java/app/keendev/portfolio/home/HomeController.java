@@ -1,4 +1,4 @@
-package app.keendev.portfolio;
+package app.keendev.portfolio.home;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -9,12 +9,6 @@ public class HomeController {
     @GetMapping("/")
     public String home(){
         return "home";
-    }
-
-    //map blog page
-    @GetMapping("/blog")
-    public String blog(){
-        return "blog";
     }
 
 
