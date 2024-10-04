@@ -12,7 +12,12 @@
       <span class="navbar-brand mb-2">blogs</span>
       <div>
         <a href="/admin/create" class="btn btn-success me-2">new post</a>
-        <a href="/blog" class="btn btn-success">back to blog</a>
+        <a href="/blog" class="btn btn-secondary">back to blog</a>
+        <form th:action="@{/logout}" method="post" style="display: inline;">
+          <button type="submit" class="btn btn-danger">logout</button>
+        </form>
+
+
       </div>
     </div>
   </nav>
