@@ -3,6 +3,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 import java.util.UUID;
@@ -14,6 +16,7 @@ public class BlogPost {
     private String title;
     private LocalDate date;
     private LocalTime time;
+    private ZoneId zoneId = ZoneId.of("America/New_York");
 
     private String content;
 
@@ -67,7 +70,9 @@ public class BlogPost {
         if(this.time == null){
             return "time not available.";
         }
-        return this.time.format(DateTimeFormatter.ofPattern("hh:mm a"));
+
+        ZonedDateTime zonedDateTime = ZonedDateTime.of(this.date, this.time, this.zoneId);
+        return zonedDateTime.format(DateTimeFormatter.ofPattern("hh:mm a"));
     }
     public String getContent(){
         return this.content;
